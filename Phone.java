@@ -15,6 +15,6 @@ public class Phone {
         System.out.println("Your phone is from " + year);
         System.out.println("It works on " + operating_system);
         System.out.println("It's screen size is " + size);
-        System.out.println("In " + color + " color");
+        System.out.println("In " + color + " color.");
     }
 }
