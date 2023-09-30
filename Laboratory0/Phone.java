@@ -13,7 +13,7 @@ public class Phone {
         this.size = size;
     }
 
-    public void state() {
+    public void stats() {
         System.out.println("Your phone is from " + year);
         System.out.println("It works on " + operating_system);
         System.out.println("It's screen size is " + size);
