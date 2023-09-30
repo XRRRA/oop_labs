@@ -1,3 +1,5 @@
+package Laboratory0;
+
 public class Phone {
     private final String operating_system;
     private final int year;
