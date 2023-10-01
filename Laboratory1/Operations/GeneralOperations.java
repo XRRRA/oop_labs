@@ -1,8 +1,10 @@
 package Laboratory1;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class GeneralOperations {
+    private static final List<Faculty> faculties = Faculty.getFacultyList();
     public static void generalOperations(Scanner input) {
         Scanner scan = new Scanner(System.in);
         while (true) {
@@ -26,13 +28,9 @@ public class GeneralOperations {
                     String facultyName = parts[1];
                     String facultyAbbreviation = parts[2];
                     StudyField studyField = StudyField.valueOf(parts[3]);
-
                     Faculty faculty = new Faculty(facultyName, facultyAbbreviation, studyField);
-
+                    Faculty.addFaculty(faculty);
                     System.out.println("New Faculty created:");
-                    System.out.println("Name: " + faculty.getName());
-                    System.out.println("Abbreviation: " + faculty.getAbbreviation());
-                    System.out.println("Study Field: " + faculty.getStudyField());
                 } else {
                     System.out.println("Invalid input for creating a faculty. Please follow the format. Do you want to try again? y/n");
                     System.out.print("Your input: ");
@@ -40,7 +38,45 @@ public class GeneralOperations {
                     decision = decision.toLowerCase();
                     if (decision.equals("n")) System.exit(0);
                 }
-            } else if (choice.equals("b")) {
+            } else if (choice.equals("df")){
+                System.out.println("The available faculties:");
+                for (Faculty faculty : faculties) {
+                    System.out.println(" - " + faculty.getName());
+                }
+                System.out.println();
+                System.out.println();
+
+            } else if (choice.startsWith("df/")){
+                String[] parts = choice.split("/");
+                if (parts.length == 2) {
+                    String field = parts[1];
+                    if (StudyField.validation(field)) {
+                        System.out.println("The faculties from the "+field+" field are:");
+                        for (Faculty faculty: faculties){
+                            if (faculty.getStudyField().toString().equals(field)){
+                                System.out.println(" - " + faculty.getName());
+                            }
+                        }
+                        System.out.println();
+                        System.out.println();
+                    } else {
+                        System.out.println("There does not exist such a field. Please introduce a valid field. Do you want to try again? y/n");
+                        System.out.print("Your input: ");
+                        String decision = scan.nextLine();
+                        decision = decision.toLowerCase();
+                        if (decision.equals("n")) System.exit(0);
+                    }
+                } else {
+                    System.out.println("Invalid input for displaying the faculties. Please follow the format. Do you want to try again? y/n");
+                    System.out.print("Your input: ");
+                    String decision = scan.nextLine();
+                    decision = decision.toLowerCase();
+                    if (decision.equals("n")) System.exit(0);
+                }
+            }
+
+
+            else if (choice.equals("b")) {
                 break;
             } else if (choice.equals("q")) {
                 System.out.println("Quitting the program");
