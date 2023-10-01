@@ -1,4 +1,7 @@
-package Laboratory1;
+package Laboratory1.Operations;
+
+import Laboratory1.Faculty;
+import Laboratory1.StudyField;
 
 import java.util.List;
 import java.util.Scanner;
@@ -38,14 +41,19 @@ public class GeneralOperations {
                     decision = decision.toLowerCase();
                     if (decision.equals("n")) System.exit(0);
                 }
-            } else if (choice.equals("df")){
+            }
+            //TODO Search the student by email and show the faculty he's from
+
+
+
+
+            else if (choice.equals("df")){
                 System.out.println("The available faculties:");
                 for (Faculty faculty : faculties) {
                     System.out.println(" - " + faculty.getName());
                 }
                 System.out.println();
                 System.out.println();
-
             } else if (choice.startsWith("df/")){
                 String[] parts = choice.split("/");
                 if (parts.length == 2) {
@@ -74,8 +82,6 @@ public class GeneralOperations {
                     if (decision.equals("n")) System.exit(0);
                 }
             }
-
-
             else if (choice.equals("b")) {
                 break;
             } else if (choice.equals("q")) {
