@@ -1,5 +1,8 @@
 package Laboratory1;
 
+import Laboratory1.Operations.FacultyOperations;
+import Laboratory1.Operations.GeneralOperations;
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +11,6 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         while(true){
-            // Menu
             System.out.println("Welcome to TUM's student management system!");
             System.out.println("What do you want to do?");
             System.out.println("g - General operations");
@@ -17,15 +19,18 @@ public class Main {
             System.out.println();
             System.out.println("q - Quit program");
             System.out.println();
-            // Take input
             System.out.print("Your input: ");
             String choice = input.nextLine();
-            // Automatically lower the input so it would not create confusion
             choice = choice.toLowerCase();
-            // Creating corresponding functions for each input
             if (choice.equals("g")) {
                 GeneralOperations.generalOperations(input);
-            } else if (choice.equals("q")) {
+            } else if (choice.equals("f")){
+                FacultyOperations.facultyOperations(input);
+            }
+            //TODO Student operations (with files)
+
+
+            else if (choice.equals("q")) {
                 System.exit(0);
             } else {
                 System.out.println();
