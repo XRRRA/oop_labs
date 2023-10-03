@@ -1,0 +1,5 @@
+gs/adrian.postica@isa.utm.md
+gs/ion.postica@isa.utm.md
+gs/catherineanderson@example.com
+gs/davidbrown@example.com
+gs/alicejohnson@example.com

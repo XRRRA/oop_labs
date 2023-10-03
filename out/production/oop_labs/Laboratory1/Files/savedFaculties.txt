@@ -15,3 +15,4 @@ nf/Mazar Veterinary Medicine/VMM/VETERINARY_MEDICINE
 nf/Kunduz Veterinary Medicine/KWM/VETERINARY_MEDICINE
 nf/TUM Software Engineering/TSE/SOFTWARE_ENGINEERING
 nf/TUM Urbanism and Architecture/TUA/URBANISM_ARCHITECTURE
+nf/UTM Urbanism/UUA/URBANISM_ARCHITECTURE

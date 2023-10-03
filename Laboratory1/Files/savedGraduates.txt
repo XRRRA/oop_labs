@@ -2,8 +2,3 @@ gs/davidjohnson@example.com
 gs/karenmiller@example.com
 gs/peterjones@example.com
 gs/markthomas@example.com
-gs/adrian.postica@isa.utm.md
-gs/ion.postica@isa.utm.md
-gs/catherineanderson@example.com
-gs/davidbrown@example.com
-gs/alicejohnson@example.com
