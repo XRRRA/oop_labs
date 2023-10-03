@@ -4,7 +4,6 @@ import Laboratory1.Faculty;
 import Laboratory1.Student;
 import Laboratory1.StudyField;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,12 +29,15 @@ public class GeneralOperations {
             String[] parts = choice.split("/");
             if (choice.startsWith("nf/")) {
                 if (parts.length == 4) {
+                    FileManager.saveData(choice);
                     String facultyName = parts[1];
                     String facultyAbbreviation = parts[2];
                     StudyField studyField = StudyField.valueOf(parts[3]);
                     Faculty faculty = new Faculty(facultyName, facultyAbbreviation, studyField);
                     Faculty.addFaculty(faculty);
-                    System.out.println("New Faculty created:");
+                    System.out.println("New Faculty created.");
+                    System.out.println();
+                    System.out.println();
                 } else {
                     System.out.println("Invalid input for creating a faculty. Please follow the format. Do you want to try again? y/n");
                     System.out.print("Your input: ");
@@ -45,18 +47,24 @@ public class GeneralOperations {
                 }
             } else if (choice.startsWith("ss/")) {
                 if (parts.length == 2) {
-                    String email = choice.substring(3);
+                    String email = parts[1];
+                    boolean studentFound = false;
                     for (Student student : students) {
                         if (student.getEmail().equals(email)) {
                             System.out.println("Student found:");
                             System.out.println(student.getFirstName() + " " + student.getLastName());
                             System.out.println("Belongs to faculty: " + student.getFacultyAbbreviation());
-                            return;
+                            studentFound = true;
+                            break;
                         }
                     }
-                    System.out.println("Student with email " + email + " not found.");
+                    if (!studentFound) {
+                        System.out.println("Student with email " + email + " not found.");
+                    }
+                    System.out.println();
+                    System.out.println();
                 } else {
-                    System.out.println("Invalid input for creating a faculty. Please follow the format. Do you want to try again? y/n");
+                    System.out.println("Invalid input for searching a student. Please follow the format. Do you want to try again? y/n");
                     System.out.print("Your input: ");
                     String decision = scan.nextLine();
                     decision = decision.toLowerCase();

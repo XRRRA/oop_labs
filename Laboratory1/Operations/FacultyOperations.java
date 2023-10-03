@@ -3,7 +3,6 @@ package Laboratory1.Operations;
 import Laboratory1.Faculty;
 import Laboratory1.Student;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,6 +29,7 @@ public class FacultyOperations {
             String[] parts = choice.split("/");
             if (choice.startsWith("ns/")) {
                 if (parts.length == 8) {
+                    FileManager.saveData(choice);
                     String facultyAbbreviation = parts[1];
                     String studentFirstName = parts[2];
                     String studentLastName = parts[3];
@@ -60,9 +60,9 @@ public class FacultyOperations {
                     decision = decision.toLowerCase();
                     if (decision.equals("n")) System.exit(0);
                 }
-            }
-            else if (choice.startsWith("gs/")) {
+            } else if (choice.startsWith("gs/")) {
                 if (parts.length == 2) {
+                    FileManager.saveData(choice);
                     String email = parts[1];
                     for (Student student : students) {
                         if (student.getEmail().equals(email)) {
@@ -83,7 +83,7 @@ public class FacultyOperations {
                     }
                 } else if (choice.startsWith("ds/")) {
                 if (parts.length == 2) {
-                    String facultyAbbreviation = parts[1];
+                    String facultyAbbreviation = choice.substring(3);
                     System.out.println("Enrolled students for faculty " + facultyAbbreviation + ":");
                     for (Student student : students) {
                         if (student.getFacultyAbbreviation().equals(facultyAbbreviation) && !student.isGraduated()) {
@@ -99,7 +99,7 @@ public class FacultyOperations {
                     decision = decision.toLowerCase();
                     if (decision.equals("n")) System.exit(0);
                 }
-            } else if (choice.startsWith("dg/")) {
+                } else if (choice.startsWith("dg/")) {
                 if (parts.length == 2) {
                     String facultyAbbreviation = choice.substring(3);
                     System.out.println("Graduated students for faculty " + facultyAbbreviation + ":");
@@ -108,6 +108,8 @@ public class FacultyOperations {
                             System.out.println(" - " + student.getEmail());
                         }
                     }
+                    System.out.println();
+                    System.out.println();
                 } else {
                     System.out.println("Invalid input for displaying the graduates. Please follow the format. Do you want to try again? y/n");
                     System.out.print("Your input: ");
@@ -122,10 +124,14 @@ public class FacultyOperations {
                     for (Student student : students) {
                         if (student.getEmail().equals(email) && student.getFacultyAbbreviation().equals(facultyAbbreviation)) {
                             System.out.println("Student with email " + email + " belongs to faculty " + facultyAbbreviation);
+                            System.out.println();
+                            System.out.println();
                             return;
                         }
                     }
                     System.out.println("Student with email " + email + " does not belong to faculty " + facultyAbbreviation);
+                    System.out.println();
+                    System.out.println();
                 } else {
                     System.out.println("Invalid input for checking the belonging to the faculty. Please follow the format. Do you want to try again? y/n");
                     System.out.print("Your input: ");
