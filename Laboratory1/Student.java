@@ -1,19 +1,32 @@
 package Laboratory1;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
+    private final Integer month;
+    private final Integer day;
+    private final Integer year;
     private String firstName;
     private String lastName;
     private String email;
-    private Date enrollmentDate;
-    private Date dateOfBirth;
-    public Student(String firstName, String lastName, String email, Date enrollmentDate, Date dateOfBirth){
+    private String facultyAbbreviation;
+    private boolean isGraduated;
+    private static final List<Student> studentsList = new ArrayList<>();
+
+    public Student(String firstName, String lastName, String email, Integer day, Integer month, Integer year, String facultyAbbreviation){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.enrollmentDate = enrollmentDate;
-        this.dateOfBirth = dateOfBirth;
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.facultyAbbreviation = facultyAbbreviation;
+        this.isGraduated = false;
+    }
+
+    public static void addStudent(Student student) {
+        studentsList.add(student);
     }
 
     public String getFirstName() {
@@ -28,12 +41,16 @@ public class Student {
         return email;
     }
 
-    public Date getEnrollmentDate() {
-        return enrollmentDate;
+    public Integer getDay() {
+        return day;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public Integer getMonth() {
+        return month;
+    }
+
+    public Integer getYear() {
+        return year;
     }
 
     public void setFirstName(String firstName) {
@@ -48,11 +65,22 @@ public class Student {
         this.email = email;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public static List<Student> getStudentsList() {
+        return studentsList;
+    }
+    public String getFacultyAbbreviation() {
+        return facultyAbbreviation;
     }
 
-    public void setEnrollmentDate(Date enrollmentDate) {
-        this.enrollmentDate = enrollmentDate;
+    public void linkWithFaculty(Faculty faculty) {
+        faculty.addStudent(this);
+    }
+
+    public boolean isGraduated() {
+        return isGraduated;
+    }
+
+    public void graduate() {
+        this.isGraduated = true;
     }
 }
