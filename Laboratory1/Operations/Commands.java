@@ -46,6 +46,8 @@ public class Commands {
                 if (student.getEmail().equals(email)) {
                     student.graduate();
                     System.out.println("Student with email " + email + " has graduated.");
+                    System.out.println();
+                    System.out.println();
                     return;
                 }
             }

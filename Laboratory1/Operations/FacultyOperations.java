@@ -7,18 +7,7 @@ public class FacultyOperations {
         String choice = "";
 
         while (!choice.equals("b")) {
-            System.out.println("Faculty operations");
-            System.out.println("What do you want to do?");
-            System.out.println();
-            System.out.println("ns/<faculty abbreviation>/<first name>/<last name>/<email>/<day>/<month>/<year> - enroll a new student");
-            System.out.println("gs/<email> - graduate student");
-            System.out.println("ds/<faculty abbreviation> - display only the enrolled students");
-            System.out.println("dg/<faculty abbreviation> - display only the graduated students");
-            System.out.println("bf/<faculty abbreviation>/<email> - check if a student belongs to faculty");
-            System.out.println();
-            System.out.println("b - Back");
-            System.out.println();
-            System.out.print("Your input: ");
+            MenuText.printFacultyOpText();
             choice = input.nextLine().trim();
             String[] parts = choice.split("/");
             switch (parts[0]) {

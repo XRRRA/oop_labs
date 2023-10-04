@@ -1,6 +1,9 @@
-package Laboratory1;
+package Laboratory1.Operations;
 
+import Laboratory1.Faculty;
 import Laboratory1.Operations.FileManager;
+import Laboratory1.Student;
+import Laboratory1.StudyField;
 
 import java.util.List;
 

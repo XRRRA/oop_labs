@@ -12,15 +12,7 @@ public class Menu {
         String choice = "" ;
 
         while(!choice.equals("q")) {
-            System.out.println("Welcome to TUM's student management system!");
-            System.out.println("What do you want to do?");
-            System.out.println("g - General operations");
-            System.out.println("f - Faculty operations");
-            System.out.println("s - Student operations");
-            System.out.println();
-            System.out.println("q - Quit program");
-            System.out.println();
-            System.out.print("Your input: ");
+            MenuText.printMenuText();
             choice = input.nextLine().toLowerCase();
             switch (choice) {
                 case "g":
