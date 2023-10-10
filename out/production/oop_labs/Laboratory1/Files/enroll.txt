@@ -1,5 +1,3 @@
-ns/CIM/Adrian/Postica/adrian.postica@isa.utm.md/26/05/1998
-ns/CIM/Ion/Postica/ion.postica@isa.utm.md/23/08/1995
 ns/CIM/Alice/Johnson/alicejohnson@example.com/18/9/1998
 ns/CIM/Bob/Miller/bobmiller@example.com/10/11/2003
 ns/CIM/Catherine/Anderson/catherineanderson@example.com/21/4/2000

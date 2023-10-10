@@ -5,15 +5,17 @@ import java.util.Scanner;
 public class StudentOperations {
     public static void studentOperations(Scanner input){
         String choice = "";
+
         while (!choice.equals("b")){
             MenuText.printStudentOpText();
             choice = input.nextLine().trim();
-            switch (choice) {
+            String[] parts = choice.split("/",2);
+            switch (parts[0]) {
                 case "be":
                     Commands.batchEnroll();
                     break;
                 case "bg":
-                    Commands.batchGraduate();
+                    Commands.batchGraduate(parts[1].split("/"));
                     break;
                 case "b":
                     break;

@@ -8,3 +8,4 @@ ns/TFT/James/Anderson/jamesanderson@example.com/21/4/2000
 ns/TFT/Linda/Brown/lindabrown@example.com/3/6/2002
 ns/TFT/Mark/Thomas/markthomas@example.com/25/1/2001
 ns/TFT/Richard/Wilson/richardwilson@example.com/9/12/1999
+ns/NEW/Vlad/Ungureanu/vlad.ungureanu@isa.utm.md/20/02/2003

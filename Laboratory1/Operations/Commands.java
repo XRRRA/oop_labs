@@ -10,7 +10,7 @@ public class Commands {
     private static final List<Student> students = Student.getStudentsList();
     private static final List<Faculty> faculties = Faculty.getFacultyList();
     private static final List<String> batchEnrollData = FileManager.loadBatchEnrollData();
-    private static final List<String> batchGraduateData = FileManager.loadBatchGraduateData();
+
     public static void enrollStudent(String[] parts) {
         if (parts.length == 8) {
             FileManager.saveData(parts[0] + "/" + parts[1] + "/" + parts[2] + "/" + parts[3] + "/" + parts[4] + "/" + parts[5] + "/" + parts[6] + "/" + parts[7]);
@@ -112,19 +112,19 @@ public class Commands {
     }
 
     public static void createFaculty(String[] parts) {
-            if (parts.length == 4) {
-                FileManager.saveData(parts[0] + "/" + parts[1] + "/" + parts[2] + "/" + parts[3]);
-                String facultyName = parts[1];
-                String facultyAbbreviation = parts[2];
-                StudyField studyField = StudyField.valueOf(parts[3]);
-                Faculty faculty = new Faculty(facultyName, facultyAbbreviation, studyField);
-                Faculty.addFaculty(faculty);
-                System.out.println("New Faculty created.");
-            } else {
-                System.out.println("Invalid input for creating a faculty. Please follow the format and try again");
-            }
-            System.out.println();
-            System.out.println();
+        if (parts.length == 4) {
+            FileManager.saveData(parts[0] + "/" + parts[1] + "/" + parts[2] + "/" + parts[3]);
+            String facultyName = parts[1];
+            String facultyAbbreviation = parts[2];
+            StudyField studyField = StudyField.valueOf(parts[3]);
+            Faculty faculty = new Faculty(facultyName, facultyAbbreviation, studyField);
+            Faculty.addFaculty(faculty);
+            System.out.println("New Faculty created.");
+        } else {
+            System.out.println("Invalid input for creating a faculty. Please follow the format and try again");
+        }
+        System.out.println();
+        System.out.println();
     }
 
     public static void searchStudent(String[] parts) {
@@ -150,7 +150,7 @@ public class Commands {
         System.out.println();
     }
 
-    public static void displayAllFaculties(){
+    public static void displayAllFaculties() {
         System.out.println("The available faculties:");
         for (Faculty faculty : faculties) {
             System.out.println(" - " + faculty.getName());
@@ -163,9 +163,9 @@ public class Commands {
         if (parts.length == 2) {
             String field = parts[1];
             if (StudyField.validation(field)) {
-                System.out.println("The faculties from the "+field+" field are:");
-                for (Faculty faculty: faculties){
-                    if (faculty.getStudyField().toString().equals(field)){
+                System.out.println("The faculties from the " + field + " field are:");
+                for (Faculty faculty : faculties) {
+                    if (faculty.getStudyField().toString().equals(field)) {
                         System.out.println(" - " + faculty.getName());
                     }
                 }
@@ -197,19 +197,24 @@ public class Commands {
         }
     }
 
-    public static void batchGraduate(){
-        for (String graduateInfo : batchGraduateData) {
-            String[] bGraduateParts = graduateInfo.split("/");
-            if (bGraduateParts.length == 2) {
-                FileManager.saveData(graduateInfo);
-                String email = bGraduateParts[1];
-                for (Student student : students) {
-                    if (student.getEmail().equals(email)) {
-                        student.graduate();
-                        break;
-                    }
+    public static void batchGraduate(String[] emails) {
+        for (String email : emails) {
+            FileManager.saveData("gs/"+email);
+            boolean studentGraduated = false;
+
+            for (Student student : students) {
+                if (student.getEmail().equals(email)) {
+                    student.graduate();
+                    System.out.println("Student with email " + email + " has graduated.");
+                    studentGraduated = true;
                 }
             }
+
+            if (!studentGraduated) {
+                System.out.println("No student found with email: " + email);
+            }
         }
+        System.out.println();
+        System.out.println();
     }
 }

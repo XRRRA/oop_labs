@@ -17,7 +17,7 @@ public class MenuText {
         System.out.println("What do you want to do?");
         System.out.println();
         System.out.println("be - batch enroll students (add the students' information in the enroll.txt file)");
-        System.out.println("bg - batch graduate students (add the graduates' information in the graduate.txt file)");
+        System.out.println("bg/email_1/em1il_2/... - batch graduate students (add as many graduates as you want)");
         System.out.println();
         System.out.println("b - Back");
         System.out.println();

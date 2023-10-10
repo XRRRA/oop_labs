@@ -13,7 +13,6 @@ public class FileManager {
     private static final String GRADUATE_FILE = DATA_FOLDER + "savedGraduates.txt";
     private static final String ACTION_FILE = DATA_FOLDER + "actions.txt";
     private static final String BATCH_ENROLL_FILE = DATA_FOLDER + "enroll.txt";
-    private static final String BATCH_GRADUATE_FILE = DATA_FOLDER + "graduate.txt";
 
     public static void saveData(String command) {
         String dataToSave = command + "\n";
@@ -25,6 +24,10 @@ public class FileManager {
         } else if (command.startsWith("nf/")) {
             saveDataToFile(dataToSave, FACULTY_FILE);
         } else if (command.startsWith("gs/")) {
+            saveDataToFile(dataToSave, GRADUATE_FILE);
+        } else if (command.startsWith("be/")) {
+            saveDataToFile(dataToSave, BATCH_ENROLL_FILE);
+        } else if (command.startsWith("bg/")) {
             saveDataToFile(dataToSave, GRADUATE_FILE);
         }
     }
@@ -52,10 +55,6 @@ public class FileManager {
 
     public static List<String> loadGraduateData() {
         return loadData(GRADUATE_FILE);
-    }
-
-    public static List<String> loadBatchGraduateData() {
-        return loadData(BATCH_GRADUATE_FILE);
     }
 
     public static List<String> loadBatchEnrollData() {
