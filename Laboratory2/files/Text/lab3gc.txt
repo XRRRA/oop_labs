@@ -1,0 +1,164 @@
+1.1 The conditions for the 3rd laboratory work were:
+a) Make a sketch using 3D Primitives SPHERE, sphereDetail(), BOX, createShape(), Quad(), pushmatrix(), popmatrix(). Rotate them using rotateX(), rotateY(), rotateZ() or rotate(). Move some of the figures horizontally, some of them vertically and move the figure on the main and secondary diagonal of the window sketch.
+b) Make array objects with 2D and (or) 3D primitivesYou can combine point a and b task 2 and do one sketch or separately.
+
+2.1 The code:
+import peasy.*;
+
+Planet sun;
+PeasyCam cam;
+
+PImage sunTexture;
+PImage[] textures = new PImage[8];
+
+
+// Skybox  
+float angle;
+PVector p;
+PImage img;
+PShape globe;
+
+void setup() {
+  fullScreen(P3D);
+  angle=0;
+
+  p = new PVector(1, 0, 1);
+
+  noStroke();
+  img = loadImage("8k_stars.jpg");
+  globe = createShape(SPHERE, 3000);
+  globe.setTexture(img);
+  
+  sunTexture = loadImage("planets/2k_sun.jpg");
+  textures[0] = loadImage("planets/2k_mercury.jpg");
+  textures[1] = loadImage("planets/2k_venus.jpg");
+  textures[2] = loadImage("planets/2k_earth.jpg");
+  textures[3] = loadImage("planets/2k_mars.jpg");
+  textures[4] = loadImage("planets/2k_jupiter.jpg");
+  textures[5] = loadImage("planets/2k_saturn.jpg");
+  textures[6] = loadImage("planets/2k_uranus.jpg");
+  textures[7] = loadImage("planets/2k_neptune.jpg");
+
+  cam = new PeasyCam(this, 500);
+  
+  sun = new Planet(50, 0, 100, sunTexture);
+  sun.moons(8, 1);
+}
+
+void draw() {
+
+  background(0);
+  pushMatrix();
+  float[] pos = cam.getPosition();
+  translate(pos[0], pos[1], pos[2]);
+  rotate(angle, p.x, p.y, p.z);
+  shape(globe);
+  angle+=0.0001;
+  popMatrix();
+
+  
+  int z = 100;
+  for (int i = 0; i<2; i++) {
+    z = -z;
+    pointLight(255, 255, 255, -100, -100, z);
+    pointLight(255, 255, 255, 100, -100, z);
+    pointLight(255, 255, 255, 100, 100, z);
+    pointLight(255, 255, 255, -100, 100, z);
+  }
+  
+
+  sun.display();
+  sun.orbit();
+  
+}
+
+class Planet {
+  float radius;
+  float angle;
+  float distance;
+  Planet[] planets;
+  float orbitSpeed;
+  PVector v;
+
+  PShape globe;
+
+  Planet(float r, float d, float o, PImage img) {
+    v = PVector.random3D();
+
+    radius = r;
+    distance = d;
+    v.mult(distance);
+
+    angle = random(TWO_PI);
+    orbitSpeed = o;
+
+    noStroke();
+    noFill();
+    globe = createShape(SPHERE, radius);
+    globe.setTexture(img);
+  }
+
+  void moons(int total, int level) {
+    planets = new Planet[total];
+    for (int i=0; i<planets.length; i++) {
+      float r = radius/(level*2);
+      float d = random((radius+r), (radius+r)*5);
+      float o = random(-0.01, 0.01);
+
+      int index = int(random(0, textures.length));
+      planets[i] = new Planet(r, d, o, textures[index]);
+      if (level < 2) {
+        int num = int(random(0, 2));
+        planets[i].moons(num, level+1);
+      }
+    }
+  }
+
+  void orbit() {
+    angle += orbitSpeed;
+    if (planets != null) {
+      for (int i=0; i<planets.length; i++) {
+        planets[i].orbit();
+      }
+    }
+  }
+
+  void display() {
+    pushMatrix();
+    noStroke();
+
+    PVector v2 = new PVector(1, 0, 1);
+    PVector p = v.cross(v2);
+    rotate(angle, p.x, p.y, p.z);
+
+    stroke(255);
+
+    translate(v.x, v.y, v.z);
+    noStroke();
+    fill(255);
+
+    shape(globe);
+
+    if (planets != null) {
+      for (int i=0; i<planets.length; i++) {
+        planets[i].display();
+      }
+    }
+    popMatrix();
+  }
+}
+2.2 Images of the final product:
+ 
+Fig 2.2.1 Solar system part 1
+ 
+Fig 2.2.2 Solar system part 2
+
+
+5.2 In conclusion, I have learned a lot of new things while realizing this laboratory work. First, I have completed the necessary condition specified in the laboratory task. I have learned to work with arrays and with 3D objects. I know now how to rotate and manipulate the figures. Also, by taking as an example and learning from YouTube, I learned to work with PShapes, PVectors, and Peasy camera, which were used in the example of the author. I learned to work with images and textures and have learned about some interesting techniques that will allow me to work more efficiently in the future.
+
+[1] https://www.youtube.com/@TheCodingTrain 
+[2] https://thecodingtrain.com/challenges/ 
+[3] http://learningprocessing.com/examples/chp14/example-14-16-solar-system
+[4] https://processing.org/reference 
+[5] https://www.youtube.com/watch?v=dncudkelNxw&list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH&index=1&t=0s 
+[6] https://www.youtube.com/watch?v=FGAwi7wpU8c 
