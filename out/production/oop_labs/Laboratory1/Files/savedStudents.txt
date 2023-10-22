@@ -9,3 +9,5 @@ ns/TFT/Linda/Brown/lindabrown@example.com/3/6/2002
 ns/TFT/Mark/Thomas/markthomas@example.com/25/1/2001
 ns/TFT/Richard/Wilson/richardwilson@example.com/9/12/1999
 ns/NEW/Vlad/Ungureanu/vlad.ungureanu@isa.utm.md/20/02/2003
+ns/CIM/Ion/Postica/ion.postica@isa.utm.md/23/08/1995
+ns/CIM/Adrian/Postica/adrian.postica@isa.utm.md/26/05/1998

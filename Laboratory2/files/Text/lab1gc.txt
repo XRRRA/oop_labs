@@ -14,7 +14,7 @@ void setup() {
   background(219, 204, 204);
   noStroke();
   fill(0,255,85);
-} 
+}
 
 void draw(){
   // Cell window

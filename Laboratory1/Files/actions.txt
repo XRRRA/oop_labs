@@ -1,2 +1,4 @@
 ns/CIM/Ion/Postica/ion.postica@isa.utm.md/23/08/1995
 ns/CIM/Adrian/Postica/adrian.postica@isa.utm.md/26/05/1998
+gs/adrian.postica@isa.utm.md
+gs/ion.postica@isa.utm.md
