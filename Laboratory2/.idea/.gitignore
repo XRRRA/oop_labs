@@ -7,4 +7,5 @@
 /dataSources/
 /dataSources.local.xml
 
-/Laboratory2/files/
+# Ignore the "files" folder
+files/
