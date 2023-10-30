@@ -1,4 +1,4 @@
-package Laboratory2.entities;
+package Laboratory2.commands;
 
 import Laboratory2.util.Util;
 

@@ -1,6 +1,5 @@
 package Laboratory2.commands;
 
-import Laboratory2.entities.Commit;
 import Laboratory2.util.Util;
 
 import java.time.Instant;
