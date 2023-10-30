@@ -7,8 +7,7 @@ To learn about the new software called “Processing” as well as learning abou
 ▸Attach the program file (.pde) and the report, add commentary to your code in the report
 
 3.	The program code with comments:
-My goal was to draw a panda, and by seeing during the process of the creation that it looks kind of scary, I decided to put it in a prison cell. Here, I have used 2D shapes like ellipses, circles, rectangles and lines. For each item I have specified the presence/absence of the stroke using stroke(), noStroke() functions as well as its width using strokeWeight(). I have filled almost each item with color using fill( here to specify the color using RGB values).
-
+My goal was to draw a panda, and by seeing during the process of the creation that it looks kind of scary, I decided to put it in a prison cell. Here, I 
 
 void draw(){
   // Cell window

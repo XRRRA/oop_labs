@@ -1,0 +1,161 @@
+1.	Laboratory purpose:
+To learn about the new software called “Processing” as well as learning about the basic functions and options available in the application.
+
+2.	Condition of the problem:
+▸combine 2D primitives in a sketch
+▸Use function setup() and draw() and as many function 2D primitives of as it possible in the sketch, use the function from theory lesson pdf document.
+▸Attach the program file (.pde) and the report, add commentary to your code in the report
+
+3.	The program code with comments:
+My goal was to draw a panda, and by seeing during the process of the creation that it looks kind of scary, I decided to put it in a prison cell. Here, I 
+
+void draw(){
+  // Cell window
+  stroke(0);
+  fill(86, 175, 227);
+  rect(100,80,300,200);
+  noStroke();
+  fill(42, 173, 75);
+  ellipse(250,280,300,150);
+  stroke(0);
+  noFill();
+  rect(100,80,300,200);
+  noStroke();
+  fill(219, 204, 204);
+  rect(100,283,300,200);
+  // Window bars
+  stroke(0);
+  strokeWeight(6);
+  line(175, 80, 175, 280);
+  stroke(0);
+  strokeWeight(6);
+  line(250, 80, 250, 280);
+  stroke(0);
+  stroke(0);
+  strokeWeight(6);
+  line(325, 80, 325, 280);
+  stroke(0);
+  strokeWeight(6);
+  line(100, 140, 400, 140);
+  stroke(0);
+  strokeWeight(6);
+  line(100, 220, 400, 220);
+  // Bars
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 50, 1000, 50);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 200, 1000, 200);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 350, 1000, 350);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 500, 1000, 500);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 650, 1000, 650);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 800, 1000, 800);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(0, 900, 1000, 900);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(50, 0, 50, 1000);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(200, 0, 200, 1000);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(350, 0, 350, 1000);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(500, 0, 500, 1000);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(650, 0, 650, 1000);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(800, 0, 800, 1000);
+  stroke(122, 122, 122);
+  strokeWeight(10);
+  line(950, 0, 950, 1000);
+  // Body
+  stroke(0);
+  fill(0);
+  rect(220, 520, 580, 500, 280, 280, 72, 72);
+  stroke(0);
+  fill(255);
+  rect(300, 560, 430, 500, 280, 280, 72, 72);
+  // Left ear
+  noStroke();
+  fill(0);
+  circle(350,250,150);
+  noStroke();
+  fill(191, 101, 194);
+  circle(350,250,80);
+  // Right ear
+  noStroke();
+  fill(0);
+  circle(650,250,150);
+  noStroke();
+  fill(191, 101, 194);
+  circle(650,250,80);
+  // Head
+  stroke(0);
+  fill(255);
+  circle(500,400,400);
+  // eyes
+  noStroke();
+  fill(0);
+  circle(410,350,110);
+  noStroke();
+  fill(0);
+  circle(585,350,110);
+  noStroke();
+  fill(255);
+  circle(410,350,50);
+  noStroke();
+  fill(0);
+  circle(410,350,20);
+  noStroke();
+  fill(255);
+  circle(585,350,50);
+  noStroke();
+  fill(0);
+  circle(585,350,20);
+  // Nose
+  stroke(0);
+  fill(0);
+  rect(470, 410, 60, 60, 24, 24, 72, 72);
+  // mouth
+  stroke(0);
+  strokeWeight(4);
+  fill(0);
+  rect(390, 480, 220, 60, 72, 72, 72, 72);
+  stroke(255);
+  line(390, 510, 610, 510);
+  stroke(255);
+  line(400, 480, 400, 540);
+  stroke(255);
+  line(425, 480, 425, 540);
+  stroke(255);
+  line(450, 480, 450, 540);
+  stroke(255);
+  line(475, 480, 475, 540);
+  stroke(255);
+  line(500, 480, 500, 540);
+  stroke(255);
+  line(525, 480, 525, 540);
+  stroke(255);
+  line(550, 480, 550, 540);
+  stroke(255);
+  line(575, 480, 575, 540);
+  stroke(255);
+  line(600, 480, 600, 540);
+}
+5.	Conclusions:
+During this laboratory work, I have learned the basic concepts of the app “Processing” and I have learned how to work with the basic 2D shapes. During the realization of the sketch, I have used only the official documentation from the official “processing” website: https://processing.org/reference/#shape. In the final I was pleased with the result. The sketch looks good and I like how it worked out, even if, initially I was thinking about something different (I wanted to create a panda that looks less scary).

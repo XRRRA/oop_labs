@@ -5,8 +5,6 @@ b) Make array objects with 2D and (or) 3D primitivesYou can combine point a and 
 2.1 The code:
 import peasy.*;
 
-Planet sun;
-PeasyCam cam;
 
 PImage sunTexture;
 PImage[] textures = new PImage[8];

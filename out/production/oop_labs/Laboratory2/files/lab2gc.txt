@@ -7,13 +7,6 @@ rx=180 ry=150 (is a half of the width and a half of the height) - iPut next code
 •	Draw a Pie inside the rectangle. - angle to start the pie is the end of quadrant IV - angle to end the pie is the middle of quadrant II 
 Change the RX for 5 points in pie function (rx-5; ry-5) 
 
-3.1 The program code: 
-void setup() {
-  size(400, 400);
-  background(254,255,206);
-  noStroke();
-  fill(0,255,85);
-}
 
 void draw() {
   // Varianta 2
