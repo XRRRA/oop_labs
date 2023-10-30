@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 public abstract class Document {
-    public static final String folderPath = "";
+    public static final String folderPath = "C:\\Users\\liviu\\IdeaProjects\\oop_labs\\Laboratory2\\files";
     public String fileName;
     public LocalDateTime creationDate;
     public LocalDateTime updateDate;

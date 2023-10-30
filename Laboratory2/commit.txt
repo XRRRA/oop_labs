@@ -1,0 +1,14 @@
+2023-10-30T18:46:39.496
+image1.jpg
+image2.jpg
+image3.jpg
+image4.jpg
+lab1gc.txt
+lab2gc.txt
+lab3gc.txt
+lab4gc.txt
+Problem1.py
+Problem2.py
+Problem3.py
+Problem4.py
+Problem5.py

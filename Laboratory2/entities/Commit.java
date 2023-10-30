@@ -43,7 +43,7 @@ public class Commit {
 
         Commit commit = new Commit(LocalDateTime.now(), Util.getFileNames());
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("commit.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Laboratory2/commit.txt"))) {
 
             writer.write(commit.getCommitTime().toString());
             writer.newLine();
@@ -60,12 +60,12 @@ public class Commit {
     public static Commit getLatestCommit() {
         Commit latestCommit = null;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("commit.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("Laboratory2/commit.txt"))) {
             String line;
             ArrayList<String> files = new ArrayList<>();
             LocalDateTime commitTime = null;
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSS");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
 
             while ((line = reader.readLine()) != null) {
                 if (commitTime == null) {
