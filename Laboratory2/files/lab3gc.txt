@@ -6,10 +6,6 @@ b) Make array objects with 2D and (or) 3D primitivesYou can combine point a and 
 import peasy.*;
 
 
-PImage sunTexture;
-PImage[] textures = new PImage[8];
-
-
 // Skybox  
 float angle;
 PVector p;

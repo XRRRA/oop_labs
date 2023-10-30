@@ -1,7 +1,6 @@
 package Laboratory2;
 
 import Laboratory2.commands.*;
-
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,7 +9,6 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         String nextCommand = "";
 
@@ -19,13 +17,7 @@ public class Main {
 
         while (!Objects.equals(nextCommand, "q")) {
             System.out.println();
-            System.out.println();
-            System.out.println("commit - update snapshot time");
-            System.out.println("info <filename>  - find information about the 'filename'");
-            System.out.println("status - display all the changes in the file folder");
-            System.out.println();
-            System.out.println("q - to quit the program");
-            System.out.println();
+
             nextCommand = scanner.nextLine();
             ArrayList<String> parsedCommand = parseCommand(nextCommand);
             Command command;
@@ -49,11 +41,16 @@ public class Main {
                     break;
                 case "q":
                     System.exit(0);
-
                     break;
                 default:
                     System.out.println("Unknown command!");
                     break;
+            }
+
+            try {
+                Thread.sleep(5000); // Sleep for 5 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 
