@@ -1,4 +1,4 @@
-package dima.document;
+package Laboratory2.document;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 public abstract class Document {
-    public static final String folderPath = "C:/Users/Valeria/IdeaProjects/OOP/Lab 2/src/main/resources/FolderManagedByDimaGIT";
+    public static final String folderPath = "";
     public String fileName;
     public LocalDateTime creationDate;
     public LocalDateTime updateDate;

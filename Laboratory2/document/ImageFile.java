@@ -1,4 +1,4 @@
-package dima.document;
+package Laboratory2.document;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

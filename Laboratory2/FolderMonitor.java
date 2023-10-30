@@ -1,6 +1,7 @@
-package dima;
+package Laboratory2;
 
-import dima.document.Document;
+
+import Laboratory2.document.Document;
 
 import java.io.File;
 import java.util.Arrays;

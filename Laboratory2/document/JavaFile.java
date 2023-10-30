@@ -1,4 +1,4 @@
-package dima.document;
+package Laboratory2.document;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

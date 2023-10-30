@@ -1,6 +1,6 @@
-package dima.commands;
+package Laboratory2.commands;
 
-import dima.document.*;
+import Laboratory2.document.*;
 
 import java.io.IOException;
 

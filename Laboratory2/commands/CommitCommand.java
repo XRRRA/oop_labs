@@ -1,6 +1,6 @@
-package dima.commands;
+package Laboratory2.commands;
 
-import dima.entities.Commit;
+import Laboratory2.entities.Commit;
 
 public class CommitCommand implements Command {
     @Override

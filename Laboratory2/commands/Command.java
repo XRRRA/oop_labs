@@ -1,4 +1,4 @@
-package dima.commands;
+package Laboratory2.commands;
 
 public interface Command {
     void invoke();

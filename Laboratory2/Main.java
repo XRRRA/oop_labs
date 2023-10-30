@@ -1,14 +1,11 @@
-package dima;
+package Laboratory2;
 
-import dima.commands.Command;
-import dima.commands.CommitCommand;
-import dima.commands.InfoCommand;
-import dima.commands.StatusCommand;
+import Laboratory2.commands.*;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
 
@@ -60,6 +57,6 @@ public class Main {
     public static ArrayList<String> parseCommand(String input) {
         String[] str = input.split(" ");
 
-        return new ArrayList<>(List.of(str));
+        return new ArrayList<>(Arrays.asList(str));
     }
 }

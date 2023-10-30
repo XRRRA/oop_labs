@@ -1,6 +1,6 @@
-package dima.entities;
+package Laboratory2.entities;
 
-import dima.util.Util;
+import Laboratory2.util.Util;
 
 import java.io.*;
 import java.time.LocalDateTime;

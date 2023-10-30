@@ -1,7 +1,7 @@
-package dima.commands;
+package Laboratory2.commands;
 
-import dima.entities.Commit;
-import dima.util.Util;
+import Laboratory2.entities.Commit;
+import Laboratory2.util.Util;
 
 import java.time.Instant;
 import java.io.File;

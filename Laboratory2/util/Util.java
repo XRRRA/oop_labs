@@ -1,9 +1,9 @@
-package dima.util;
+package Laboratory2.util;
 
-import dima.document.Document;
-import java.io.*;
+import Laboratory2.document.Document;
 import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.util.Arrays;
 
 public class Util {
 
@@ -31,7 +31,7 @@ public class Util {
         File directory = new File(Document.folderPath);
         ArrayList<File> files = new ArrayList<>();
         if (directory.isDirectory()) {
-             files = new ArrayList<>(List.of(directory.listFiles()));
+            files = new ArrayList<>(Arrays.asList(directory.listFiles()));
         }
 
         return files;
