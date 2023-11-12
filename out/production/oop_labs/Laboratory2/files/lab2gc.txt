@@ -1,12 +1,4 @@
 1.1 The purpose of Task 1 was to create a 400x400 sketch with a specified background color using the setup() and draw() functions. Within the setup() function, the task involves drawing a rectangle with a line inside it, centered within the sketch, adjusting coordinates, and changing line thickness and color. In the draw() function, the task includes drawing specific shapes (arc, chord, and pie) within the rectangle, each with defined angle conditions and color changes, while also adjusting the position of the pie.
- 
-2.1 The conditions are: 
-rx=180 ry=150 (is a half of the width and a half of the height) - iPut next code in a function draw() - The thickness of the line is 4. Change the color for each shape. 
-•	Draw an arc inside the rectangle in quadrant I 
-•	Draw a chord inside the rectangle. - angle to start the chord is in middle of quadrant II - angle to end the chord is the end of quadrant III 
-•	Draw a Pie inside the rectangle. - angle to start the pie is the end of quadrant IV - angle to end the pie is the middle of quadrant II 
-Change the RX for 5 points in pie function (rx-5; ry-5) 
-
 
 void draw() {
   // Varianta 2

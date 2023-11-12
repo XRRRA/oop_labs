@@ -1,5 +1,3 @@
-Task 4 part 1 (before the midterm)
-1.0 The task before the midterm consisted of 8 exercises from the book ”The nature of code” by Daniel Shiffman. More exactly, we had to analyze the examples from the introduction and the examples from the chapter one, vectors and make the exercises 1.1-1.8
 
 1.1	Task: Find something you’ve previously made in Processing using separate x and y variables and use PVectors instead.
 1.1.2 Code (with x and y):
@@ -10,9 +8,6 @@ float ySpeed = 2.2;
 float angle = 0;
 float maxSpeed = 20.0;
 
-void setup() {
-  size(800, 600, P3D);
-}
 
 void draw() {
   background(255);
