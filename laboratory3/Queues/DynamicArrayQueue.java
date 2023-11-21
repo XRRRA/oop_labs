@@ -1,6 +1,5 @@
 package Laboratory3.Queues;
 
-
 import java.util.NoSuchElementException;
 
 public class DynamicArrayQueue<E> implements Queue<E> {
@@ -9,6 +8,7 @@ public class DynamicArrayQueue<E> implements Queue<E> {
     private int front;
     private int rear;
     private static final int DEFAULT_CAPACITY = 10;
+    private static final int MAX_CAPACITY = 5;
 
     public DynamicArrayQueue() {
         array = new Object[DEFAULT_CAPACITY];
@@ -20,6 +20,9 @@ public class DynamicArrayQueue<E> implements Queue<E> {
     @Override
     public void enqueue(E item) {
         ensureCapacity(size + 1);
+        if (size == MAX_CAPACITY) {
+            throw new IllegalStateException("Queue is full.");
+        }
         array[rear] = item;
         rear = (rear + 1) % array.length;
         size++;

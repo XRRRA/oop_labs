@@ -1,0 +1,19 @@
+nf/Faculty of Computer, Informatics and Microelectronics/CIM/SOFTWARE_ENGINEERING
+nf/Technische Mechanical Engineering/TME/MECHANICAL_ENGINEERING
+nf/Stanford Mechanical Engineering/SME/MECHANICAL_ENGINEERING
+nf/Michigan Mechanical Engineering/MME/MECHANICAL_ENGINEERING
+nf/Arizona Software Engineering/ASE/SOFTWARE_ENGINEERING
+nf/Ottawa Software Engineering/OSE/SOFTWARE_ENGINEERING
+nf/LULST Food Technology/LBTU/FOOD_TECHNOLOGY
+nf/TUM Food Technology/TFT/FOOD_TECHNOLOGY
+nf/Ramayah Food Technology/RFT/FOOD_TECHNOLOGY
+nf/Weimar Urbanism and Architecture/WUA/URBANISM_ARCHITECTURE
+nf/Chile Urbanism and Architecture/CUA/URBANISM_ARCHITECTURE
+nf/Urmia Urbanism and Architecture/UUA/URBANISM_ARCHITECTURE
+nf/Herat Veterinary Medicine/HVM/VETERINARY_MEDICINE
+nf/Mazar Veterinary Medicine/VMM/VETERINARY_MEDICINE
+nf/Kunduz Veterinary Medicine/KWM/VETERINARY_MEDICINE
+nf/TUM Software Engineering/TSE/SOFTWARE_ENGINEERING
+nf/TUM Urbanism and Architecture/TUA/URBANISM_ARCHITECTURE
+nf/UTM Urbanism/UUA/URBANISM_ARCHITECTURE
+nf/New Faculty/NEW/SOFTWARE_ENGINEERING

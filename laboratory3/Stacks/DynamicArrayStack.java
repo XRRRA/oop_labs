@@ -7,6 +7,7 @@ public class DynamicArrayStack<E> implements Stack<E> {
     private Object[] array;
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
+    private static final int MAX_CAPACITY = 5;
 
     public DynamicArrayStack() {
         array = new Object[DEFAULT_CAPACITY];
@@ -15,6 +16,9 @@ public class DynamicArrayStack<E> implements Stack<E> {
 
     @Override
     public void push(E item) {
+        if (size == MAX_CAPACITY) {
+            throw new IllegalStateException("Stack is full.");
+        }
         ensureCapacity(size + 1);
         array[size++] = item;
     }

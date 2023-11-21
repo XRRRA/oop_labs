@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 
 public class MinHeapQueue<E extends Comparable<E>> implements Queue<E> {
     private final PriorityQueue<E> priorityQueue;
+    private static final int MAX_CAPACITY = 5;
 
     public MinHeapQueue() {
         priorityQueue = new PriorityQueue<>();
@@ -12,6 +13,9 @@ public class MinHeapQueue<E extends Comparable<E>> implements Queue<E> {
 
     @Override
     public void enqueue(E item) {
+        if (size() == MAX_CAPACITY) {
+            throw new IllegalStateException("Queue is full.");
+        }
         priorityQueue.offer(item);
     }
 

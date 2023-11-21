@@ -1,14 +1,36 @@
 package Laboratory3.Stacks;
 
 import java.util.EmptyStackException;
-import java.util.LinkedList;
 
 public class LinkedListStack<E> implements Stack<E> {
-    private LinkedList<E> list = new LinkedList<>();
+    private Node<E> top;
+    private int size;
+    private static final int MAX_CAPACITY = 5;
+
+    private static class Node<E> {
+        E data;
+        Node<E> next;
+
+        Node(E data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public LinkedListStack() {
+        top = null;
+        size = 0;
+    }
 
     @Override
     public void push(E item) {
-        list.addFirst(item);
+        if (size == MAX_CAPACITY) {
+            throw new IllegalStateException("Stack is full");
+        }
+        Node<E> newNode = new Node<>(item);
+        newNode.next = top;
+        top = newNode;
+        size++;
     }
 
     @Override
@@ -16,7 +38,10 @@ public class LinkedListStack<E> implements Stack<E> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return list.removeFirst();
+        E item = top.data;
+        top = top.next;
+        size--;
+        return item;
     }
 
     @Override
@@ -24,21 +49,22 @@ public class LinkedListStack<E> implements Stack<E> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return list.getFirst();
+        return top.data;
     }
 
     @Override
     public boolean isEmpty() {
-        return list.isEmpty();
+        return size == 0;
     }
 
     @Override
     public int size() {
-        return list.size();
+        return size;
     }
 
     @Override
     public void clear() {
-        list.clear();
+        top = null;
+        size = 0;
     }
 }

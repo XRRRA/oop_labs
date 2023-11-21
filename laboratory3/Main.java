@@ -9,7 +9,7 @@ public class Main {
         boolean stackTestsPassed = testStacks();
 
         if (queueTestsPassed && stackTestsPassed) {
-            System.out.println("All Test OK");
+            System.out.println("All Tests are OK");
         } else {
             System.out.println("Tests Failed");
         }

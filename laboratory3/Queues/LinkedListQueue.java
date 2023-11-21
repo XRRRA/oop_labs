@@ -1,12 +1,12 @@
 package Laboratory3.Queues;
 
-
 import java.util.NoSuchElementException;
 
 public class LinkedListQueue<E> implements Queue<E> {
     private Node<E> front;
     private Node<E> rear;
     private int size;
+    private static final int MAX_CAPACITY = 5;
 
     private static class Node<E> {
         E data;
@@ -26,6 +26,9 @@ public class LinkedListQueue<E> implements Queue<E> {
 
     @Override
     public void enqueue(E item) {
+        if (size == MAX_CAPACITY) {
+            throw new IllegalStateException("Queue is full.");
+        }
         Node<E> newNode = new Node<>(item);
         if (isEmpty()) {
             front = newNode;

@@ -3,7 +3,7 @@ package Laboratory3.Stacks;
 import java.util.EmptyStackException;
 
 public class ArrayStack<E> implements Stack<E> {
-    private final int MAX_CAPACITY_DEFAULT = 10;
+    private final int MAX_CAPACITY_DEFAULT = 5;
     private Object[] array;
     private int size;
 
